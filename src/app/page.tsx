@@ -115,7 +115,7 @@ function Frame({
       <div className="max-w-screen-lg px-4 md:px-6 lg:px-8 py-36 mx-auto grow">
         {children}
       </div>
-      <div className="absolute bottom-8 right-8 z-10 flex flex-col gap-2">
+      <div className="hidden md:flex absolute bottom-8 right-8 z-10 flex-col gap-2">
         {!isFirst && (
           <button
             aria-label="Previous item"
