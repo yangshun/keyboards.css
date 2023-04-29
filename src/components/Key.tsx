@@ -139,22 +139,32 @@ function keyLabel(letter: KeyboardKey):
     case 'Escape':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-xs">Esc</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-xs">Esc</span>
+        ),
       };
     case 'PrintScreen':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Print</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">Print</span>
+        ),
       };
     case 'ScrollLock':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Scroll</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">
+            Scroll
+          </span>
+        ),
       };
     case 'Pause':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Pause</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">Pause</span>
+        ),
       };
     case '`':
       return { type: 'double', top: '~', bottom: '`' };
@@ -201,33 +211,49 @@ function keyLabel(letter: KeyboardKey):
     case 'Control':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-xs">Ctrl</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-xs">Ctrl</span>
+        ),
       };
     case 'PageUp':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Pg Up</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">Pg Up</span>
+        ),
       };
     case 'PageDown':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Pg Dn</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">Pg Dn</span>
+        ),
       };
     case 'Delete':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Del</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">Del</span>
+        ),
       };
     case 'Insert':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">Insert</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">
+            Insert
+          </span>
+        ),
       };
     case 'Home':
     case 'End':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-[10px]">{letter}</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-[10px]">
+            {letter}
+          </span>
+        ),
       };
     case 'Delete':
     case 'Meta':
@@ -248,64 +274,77 @@ function keyLabel(letter: KeyboardKey):
     case 'Fn':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-xs">{letter}</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-xs">{letter}</span>
+        ),
       };
     case 'CapsLock':
       return {
         type: 'single',
-        center: <span className="text-[6px] md:text-xs">Caps Lock</span>,
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-xs">Caps Lock</span>
+        ),
       };
     case 'LeftShift':
     case 'RightShift':
       return {
         type: 'single',
         center: (
-          <span className="ml-4 flex gap-1 items-center w-full justify-start">
-            <ArrowBigUpIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
-            <span className="text-[6px] md:text-xs">Shift</span>
+          <span className="ml-2 sm:ml-4 flex gap-1 items-center w-full justify-start">
+            <ArrowBigUpIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+            <span className="text-[4px] sm:text-[5px] md:text-xs">Shift</span>
           </span>
         ),
       };
     case 'ArrowUp':
       return {
         type: 'single',
-        center: <ArrowUpIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />,
+        center: (
+          <ArrowUpIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+        ),
       };
     case 'ArrowLeft':
       return {
         type: 'single',
         center: (
-          <ArrowLeftIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+          <ArrowLeftIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'ArrowDown':
       return {
         type: 'single',
         center: (
-          <ArrowDownIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+          <ArrowDownIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'ArrowRight':
       return {
         type: 'single',
         center: (
-          <ArrowRightIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+          <ArrowRightIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'Enter':
       return {
         type: 'single',
         center: (
-          <CornerDownLeftIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+          <CornerDownLeftIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'Backspace':
       return {
         type: 'single',
-        center: <DeleteIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />,
+        center: (
+          <DeleteIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+        ),
       };
     default:
-      return { type: 'single', center: letter };
+      return {
+        type: 'single',
+        center: (
+          <span className="text-[6px] sm:text-[7px] md:text-xs">{letter}</span>
+        ),
+      };
   }
 }
 
@@ -322,7 +361,7 @@ export default function Key({
   return (
     <span
       className={clsx(
-        'rounded-sm sm:rounded-md grow md:p-1 text-[6px] md:text-sm lg:text-base flex items-center justify-center border-slate-200 font-bold shrink-0',
+        'rounded-sm sm:rounded-md grow md:p-1 lg:text-base flex items-center justify-center border-slate-200 font-bold shrink-0',
         gridColumnSpan === 1 && 'aspect-square',
         className,
       )}
@@ -342,10 +381,10 @@ export default function Key({
 
         return (
           <div className="flex flex-col justify-between">
-            <span className="text-[5px] md:text-xs xl:text-sm">
+            <span className="text-[4px] sm:text-[5px] md:text-xs xl:text-sm">
               {label.top}
             </span>
-            <span className="text-[5px] md:text-xs xl:text-sm">
+            <span className="text-[4px] sm:text-[5px] md:text-xs xl:text-sm">
               {label.bottom}
             </span>
           </div>
