@@ -1,12 +1,14 @@
-import Key from '../Key';
-import KeyboardRow from '../KeyboardRow';
+import Image from 'next/image';
+import Key from '../../Key';
+import KeyboardRow from '../../KeyboardRow';
+import AstroLogo from './astro-logo-dark.svg';
 
 const ACCENT_ORANGE = '#ff7e33';
 const ACCENT_PURPLE_BACKGROUND = '#2a233e';
 const ACCENT_PURPLE_LIGHT = '#872de666';
 const WHITE = '#fff';
 
-export default function AngularKeyboard() {
+export default function AstroKeyboard() {
   return (
     <div
       className="flex flex-col gap-3 sm:gap-6 p-2 sm:p-4 rounded-lg w-full shadow-xl"
@@ -110,7 +112,15 @@ export default function AngularKeyboard() {
               letter={character}
             />
           ))}
-          <Key backgroundColor={ACCENT_ORANGE} letter="Enter" />
+          <Key backgroundColor={ACCENT_ORANGE} letter="Enter">
+            {
+              <Image
+                className="h-2 sm:h-4 lg:h-5"
+                alt="Astro Logo"
+                src={AstroLogo}
+              />
+            }
+          </Key>
         </KeyboardRow>
         <KeyboardRow>
           <Key backgroundColor={WHITE} letter={'LeftShift'} />

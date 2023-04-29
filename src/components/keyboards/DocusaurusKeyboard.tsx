@@ -139,7 +139,7 @@ export default function AngularKeyboard() {
             letter="RightShift"
           />
           <span className="col-span-5" />
-          <Key backgroundColor={LIGHT_GRAY} letter="ArrowUp" />
+          <Key backgroundColor={LIGHT_GRAY} color={WHITE} letter="ArrowUp" />
         </KeyboardRow>
         <KeyboardRow>
           {(['Control', 'Meta', 'Alt'] as const).map((character) => (

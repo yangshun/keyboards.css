@@ -12,10 +12,10 @@ import {
 
 type Props = Readonly<{
   className?: string;
+  children?: ReactNode;
   backgroundColor?: string;
   color?: string;
   letter: KeyboardKey;
-  ratio?: number;
 }>;
 
 type KeyboardKey =
@@ -127,85 +127,106 @@ function keyAspectRatio(letter: KeyboardKey): number {
 
 function keyLabel(letter: KeyboardKey):
   | Readonly<{
+      type: 'single';
       center: ReactNode;
     }>
-  | Readonly<{ top: string; bottom: string }> {
+  | Readonly<{
+      type: 'double';
+      top: string;
+      bottom: string;
+    }> {
   switch (letter) {
     case 'Escape':
-      return { center: <span className="text-[6px] md:text-xs">Esc</span> };
+      return {
+        type: 'single',
+        center: <span className="text-[6px] md:text-xs">Esc</span>,
+      };
     case 'PrintScreen':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">Print</span>,
       };
     case 'ScrollLock':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">Scroll</span>,
       };
     case 'Pause':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">Pause</span>,
       };
     case '`':
-      return { top: '~', bottom: '`' };
+      return { type: 'double', top: '~', bottom: '`' };
     case '1':
-      return { top: '!', bottom: '1' };
+      return { type: 'double', top: '!', bottom: '1' };
     case '2':
-      return { top: '@', bottom: '2' };
+      return { type: 'double', top: '@', bottom: '2' };
     case '3':
-      return { top: '#', bottom: '3' };
+      return { type: 'double', top: '#', bottom: '3' };
     case '4':
-      return { top: '$', bottom: '4' };
+      return { type: 'double', top: '$', bottom: '4' };
     case '5':
-      return { top: '%', bottom: '5' };
+      return { type: 'double', top: '%', bottom: '5' };
     case '6':
-      return { top: '^', bottom: '6' };
+      return { type: 'double', top: '^', bottom: '6' };
     case '7':
-      return { top: '&', bottom: '7' };
+      return { type: 'double', top: '&', bottom: '7' };
     case '8':
-      return { top: '*', bottom: '8' };
+      return { type: 'double', top: '*', bottom: '8' };
     case '9':
-      return { top: '(', bottom: '9' };
+      return { type: 'double', top: '(', bottom: '9' };
     case '0':
-      return { top: ')', bottom: '0' };
+      return { type: 'double', top: ')', bottom: '0' };
     case '-':
-      return { top: '_', bottom: '-' };
+      return { type: 'double', top: '_', bottom: '-' };
     case '=':
-      return { top: '+', bottom: '=' };
+      return { type: 'double', top: '+', bottom: '=' };
     case '[':
-      return { top: '{', bottom: '[' };
+      return { type: 'double', top: '{', bottom: '[' };
     case ']':
-      return { top: '}', bottom: ']' };
+      return { type: 'double', top: '}', bottom: ']' };
     case '\\':
-      return { top: '|', bottom: '\\' };
+      return { type: 'double', top: '|', bottom: '\\' };
     case ';':
-      return { top: ':', bottom: ';' };
+      return { type: 'double', top: ':', bottom: ';' };
     case "'":
-      return { top: '"', bottom: "'" };
+      return { type: 'double', top: '"', bottom: "'" };
     case ',':
-      return { top: '<', bottom: ',' };
+      return { type: 'double', top: '<', bottom: ',' };
     case '.':
-      return { top: '>', bottom: '.' };
+      return { type: 'double', top: '>', bottom: '.' };
     case '/':
-      return { top: '?', bottom: '/' };
+      return { type: 'double', top: '?', bottom: '/' };
     case 'Control':
-      return { center: <span className="text-[6px] md:text-xs">Ctrl</span> };
+      return {
+        type: 'single',
+        center: <span className="text-[6px] md:text-xs">Ctrl</span>,
+      };
     case 'PageUp':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">Pg Up</span>,
       };
     case 'PageDown':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">Pg Dn</span>,
       };
     case 'Delete':
-      return { center: <span className="text-[6px] md:text-[10px]">Del</span> };
+      return {
+        type: 'single',
+        center: <span className="text-[6px] md:text-[10px]">Del</span>,
+      };
     case 'Insert':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">Insert</span>,
       };
     case 'Home':
     case 'End':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-[10px]">{letter}</span>,
       };
     case 'Delete':
@@ -226,15 +247,18 @@ function keyLabel(letter: KeyboardKey):
     case 'Tab':
     case 'Fn':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-xs">{letter}</span>,
       };
     case 'CapsLock':
       return {
+        type: 'single',
         center: <span className="text-[6px] md:text-xs">Caps Lock</span>,
       };
     case 'LeftShift':
     case 'RightShift':
       return {
+        type: 'single',
         center: (
           <span className="ml-4 flex gap-1 items-center w-full justify-start">
             <ArrowBigUpIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
@@ -244,47 +268,53 @@ function keyLabel(letter: KeyboardKey):
       };
     case 'ArrowUp':
       return {
+        type: 'single',
         center: <ArrowUpIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />,
       };
     case 'ArrowLeft':
       return {
+        type: 'single',
         center: (
           <ArrowLeftIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'ArrowDown':
       return {
+        type: 'single',
         center: (
           <ArrowDownIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'ArrowRight':
       return {
+        type: 'single',
         center: (
           <ArrowRightIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'Enter':
       return {
+        type: 'single',
         center: (
           <CornerDownLeftIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />
         ),
       };
     case 'Backspace':
       return {
+        type: 'single',
         center: <DeleteIcon className="h-3 w-3 md:h-5 md:w-5 lg:h-6 lg:w-6" />,
       };
     default:
-      return { center: letter };
+      return { type: 'single', center: letter };
   }
 }
 
 export default function Key({
   backgroundColor,
+  children,
   color,
   className,
   letter,
-  ratio,
 }: Props) {
   const gridColumnSpan = keyAspectRatio(letter);
   const label = keyLabel(letter);
@@ -301,16 +331,26 @@ export default function Key({
         color,
         gridColumn: `span ${gridColumnSpan * 4} / span ${gridColumnSpan * 4}`,
       }}>
-      {label.center ? (
-        label.center
-      ) : (
-        <div className="flex flex-col justify-between">
-          <span className="text-[5px] md:text-xs xl:text-sm">{label.top}</span>
-          <span className="text-[5px] md:text-xs xl:text-sm">
-            {label.bottom}
-          </span>
-        </div>
-      )}
+      {(() => {
+        if (children) {
+          return children;
+        }
+
+        if (label.type === 'single') {
+          return label.center;
+        }
+
+        return (
+          <div className="flex flex-col justify-between">
+            <span className="text-[5px] md:text-xs xl:text-sm">
+              {label.top}
+            </span>
+            <span className="text-[5px] md:text-xs xl:text-sm">
+              {label.bottom}
+            </span>
+          </div>
+        );
+      })()}
     </span>
   );
 }
