@@ -3,7 +3,7 @@ import KeyboardRow from '../KeyboardRow';
 
 const WHITE = '#fff';
 const ANGULAR_RED = '#dd0031'; // Red
-const ANUGLAR_BLUE = 'rgb(25, 118, 210)'; // Blue
+const ANGULAR_BLUE = 'rgb(25, 118, 210)'; // Blue
 const BASE = 'rgb(242, 242, 242)';
 
 export default function AngularKeyboard() {
@@ -12,7 +12,7 @@ export default function AngularKeyboard() {
       className="flex flex-col gap-3 sm:gap-6 p-2 sm:p-4 rounded-lg w-full shadow-xl"
       style={{ backgroundColor: BASE }}>
       <KeyboardRow>
-        <Key backgroundColor={ANUGLAR_BLUE} color={WHITE} letter={'Escape'} />
+        <Key backgroundColor={ANGULAR_BLUE} color={WHITE} letter={'Escape'} />
         <span className="col-span-4" />
         {(['F1', 'F2', 'F3', 'F4'] as const).map((character) => (
           <Key
@@ -25,7 +25,7 @@ export default function AngularKeyboard() {
         <span className="col-span-2" />
         {(['F5', 'F6', 'F7', 'F8'] as const).map((character) => (
           <Key
-            backgroundColor={ANUGLAR_BLUE}
+            backgroundColor={ANGULAR_BLUE}
             color={WHITE}
             key={character}
             letter={character}
@@ -77,7 +77,7 @@ export default function AngularKeyboard() {
             />
           ))}
           <Key
-            backgroundColor={ANUGLAR_BLUE}
+            backgroundColor={ANGULAR_BLUE}
             color={WHITE}
             letter={'Backspace'}
           />
@@ -143,7 +143,7 @@ export default function AngularKeyboard() {
               letter={character}
             />
           ))}
-          <Key backgroundColor={ANUGLAR_BLUE} color={WHITE} letter="Enter" />
+          <Key backgroundColor={ANGULAR_BLUE} color={WHITE} letter="Enter" />
         </KeyboardRow>
         <KeyboardRow>
           <Key
@@ -162,7 +162,7 @@ export default function AngularKeyboard() {
             ),
           )}
           <Key
-            backgroundColor={ANUGLAR_BLUE}
+            backgroundColor={ANGULAR_BLUE}
             color={WHITE}
             letter="RightShift"
           />
@@ -181,7 +181,7 @@ export default function AngularKeyboard() {
           <Key backgroundColor={WHITE} color={ANGULAR_RED} letter={' '} />
           {(['Alt', 'Meta', 'Fn', 'Control'] as const).map((character) => (
             <Key
-              backgroundColor={ANUGLAR_BLUE}
+              backgroundColor={ANGULAR_BLUE}
               color={WHITE}
               key={character}
               letter={character}
