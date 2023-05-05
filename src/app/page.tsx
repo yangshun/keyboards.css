@@ -4,13 +4,13 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import { ReactElement, ReactNode } from 'react';
 
-import AngularKeyboard from '~/components/keyboards/AngularKeyboard';
+import AngularKeyboard from '~/components/keyboards/angular/AngularKeyboard';
 import AstroKeyboard from '~/components/keyboards/astro/AstroKeyboard';
 import DocusaurusKeyboard from '~/components/keyboards/DocusaurusKeyboard';
-import QwikKeyboard from '~/components/keyboards/QwikKeyboard';
-import ReactKeyboard from '~/components/keyboards/ReactKeyboard';
-import SvelteKeyboard from '~/components/keyboards/SvelteKeyboard';
-import VueKeyboard from '~/components/keyboards/VueKeyboard';
+import QwikKeyboard from '~/components/keyboards/qwik/QwikKeyboard';
+import ReactKeyboard from '~/components/keyboards/react/ReactKeyboard';
+import SvelteKeyboard from '~/components/keyboards/svelte/SvelteKeyboard';
+import VueKeyboard from '~/components/keyboards/vue/VueKeyboard';
 
 import AstroMark from '~/components/logos/astro.svg';
 import AngularMark from '~/components/logos/angular.svg';

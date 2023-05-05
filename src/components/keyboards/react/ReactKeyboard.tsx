@@ -1,23 +1,24 @@
-import Key from '../Key';
-import KeyboardRow from '../KeyboardRow';
+import Image from 'next/image';
+import Key from '../../Key';
+import KeyboardRow from '../../KeyboardRow';
+import ReactLogo from './react-logo.svg';
 
-const QWIK_BLUE = '#0093ee';
-const QWIK_PURPLE = '#ac7ff4';
-const ACCENT_BLACK = '#0e201a';
-const LIGHT_GRAY = '#f9f9f9';
 const WHITE = '#fff';
+const PRIMARY_BLUE = 'rgb(20 158 202/1)';
+const GRAY = 'rgb(35 39 47/1)';
+const LIGHT_GRAY = 'rgb(52 58 70/1)';
 
-export default function QwikKeyboard() {
+export default function ReactKeyboard() {
   return (
     <div
       className="flex flex-col gap-3 sm:gap-6 p-2 sm:p-4 rounded-lg w-full shadow-xl"
-      style={{ backgroundColor: LIGHT_GRAY }}>
+      style={{ backgroundColor: GRAY }}>
       <KeyboardRow>
-        <Key backgroundColor={QWIK_PURPLE} color={WHITE} letter={'Escape'} />
+        <Key backgroundColor={PRIMARY_BLUE} color={WHITE} letter={'Escape'} />
         <span className="col-span-4" />
         {(['F1', 'F2', 'F3', 'F4'] as const).map((character) => (
           <Key
-            backgroundColor={ACCENT_BLACK}
+            backgroundColor={LIGHT_GRAY}
             color={WHITE}
             key={character}
             letter={character}
@@ -26,7 +27,7 @@ export default function QwikKeyboard() {
         <span className="col-span-2" />
         {(['F5', 'F6', 'F7', 'F8'] as const).map((character) => (
           <Key
-            backgroundColor={ACCENT_BLACK}
+            backgroundColor={PRIMARY_BLUE}
             color={WHITE}
             key={character}
             letter={character}
@@ -35,7 +36,7 @@ export default function QwikKeyboard() {
         <span className="col-span-2" />
         {(['F9', 'F10', 'F11', 'F12'] as const).map((character) => (
           <Key
-            backgroundColor={ACCENT_BLACK}
+            backgroundColor={LIGHT_GRAY}
             color={WHITE}
             key={character}
             letter={character}
@@ -44,7 +45,7 @@ export default function QwikKeyboard() {
         <span className="col-span-1" />
         {(['PrintScreen', 'ScrollLock', 'Pause'] as const).map((character) => (
           <Key
-            backgroundColor={QWIK_BLUE}
+            backgroundColor={PRIMARY_BLUE}
             color={WHITE}
             key={character}
             letter={character}
@@ -72,14 +73,23 @@ export default function QwikKeyboard() {
           ).map((character) => (
             <Key backgroundColor={WHITE} key={character} letter={character} />
           ))}
-          <Key backgroundColor={WHITE} letter={'Backspace'} />
+          <Key
+            backgroundColor={LIGHT_GRAY}
+            color={WHITE}
+            letter={'Backspace'}
+          />
           <span className="col-span-1" />
           {(['Insert', 'Home', 'PageUp'] as const).map((character) => (
-            <Key backgroundColor={WHITE} key={character} letter={character} />
+            <Key
+              backgroundColor={LIGHT_GRAY}
+              color={WHITE}
+              key={character}
+              letter={character}
+            />
           ))}
         </KeyboardRow>
         <KeyboardRow>
-          <Key backgroundColor={QWIK_PURPLE} color={WHITE} letter={'Tab'} />
+          <Key backgroundColor={LIGHT_GRAY} color={WHITE} letter={'Tab'} />
           {(
             [
               'Q',
@@ -94,32 +104,33 @@ export default function QwikKeyboard() {
               'P',
               '[',
               ']',
+              '\\',
             ] as const
           ).map((character) => (
             <Key backgroundColor={WHITE} key={character} letter={character} />
           ))}
-          <Key backgroundColor={QWIK_PURPLE} color={WHITE} letter={'\\'} />
           <span className="col-span-1" />
           {(['Delete', 'End', 'PageDown'] as const).map((character) => (
-            <Key backgroundColor={WHITE} key={character} letter={character} />
+            <Key
+              backgroundColor={LIGHT_GRAY}
+              color={WHITE}
+              key={character}
+              letter={character}
+            />
           ))}
         </KeyboardRow>
         <KeyboardRow>
-          <Key
-            backgroundColor={QWIK_PURPLE}
-            color={WHITE}
-            letter={'CapsLock'}
-          />
+          <Key backgroundColor={LIGHT_GRAY} color={WHITE} letter={'CapsLock'} />
           {(
             ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'"] as const
           ).map((character) => (
             <Key backgroundColor={WHITE} key={character} letter={character} />
           ))}
-          <Key backgroundColor={QWIK_PURPLE} color={WHITE} letter="Enter" />
+          <Key backgroundColor={PRIMARY_BLUE} color={WHITE} letter="Enter" />
         </KeyboardRow>
         <KeyboardRow>
           <Key
-            backgroundColor={QWIK_PURPLE}
+            backgroundColor={LIGHT_GRAY}
             color={WHITE}
             letter={'LeftShift'}
           />
@@ -128,27 +139,29 @@ export default function QwikKeyboard() {
               <Key backgroundColor={WHITE} key={character} letter={character} />
             ),
           )}
-          <Key
-            backgroundColor={QWIK_PURPLE}
-            color={WHITE}
-            letter="RightShift"
-          />
+          <Key backgroundColor={LIGHT_GRAY} color={WHITE} letter="RightShift" />
           <span className="col-span-5" />
-          <Key backgroundColor={ACCENT_BLACK} color={WHITE} letter="ArrowUp" />
+          <Key backgroundColor={PRIMARY_BLUE} color={WHITE} letter="ArrowUp" />
         </KeyboardRow>
         <KeyboardRow>
           {(['Control', 'Meta', 'Alt'] as const).map((character) => (
             <Key
-              backgroundColor={QWIK_BLUE}
+              backgroundColor={LIGHT_GRAY}
               color={WHITE}
               key={character}
               letter={character}
             />
           ))}
-          <Key backgroundColor={ACCENT_BLACK} letter={' '} />
+          <Key backgroundColor={WHITE} letter={' '}>
+            <Image
+              className="w-3 sm:w-6 lg:w-8"
+              alt="React Logo"
+              src={ReactLogo}
+            />
+          </Key>
           {(['Alt', 'Meta', 'Fn', 'Control'] as const).map((character) => (
             <Key
-              backgroundColor={QWIK_BLUE}
+              backgroundColor={LIGHT_GRAY}
               color={WHITE}
               key={character}
               letter={character}
@@ -158,7 +171,7 @@ export default function QwikKeyboard() {
           {(['ArrowLeft', 'ArrowDown', 'ArrowRight'] as const).map(
             (character) => (
               <Key
-                backgroundColor={ACCENT_BLACK}
+                backgroundColor={PRIMARY_BLUE}
                 color={WHITE}
                 key={character}
                 letter={character}

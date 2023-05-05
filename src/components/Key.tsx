@@ -361,7 +361,7 @@ export default function Key({
   return (
     <span
       className={clsx(
-        'rounded-sm sm:rounded-md grow md:p-1 lg:text-base flex items-center justify-center border-slate-200 font-bold shrink-0',
+        'select-none overflow-hidden rounded-sm sm:rounded-md grow md:p-1 lg:text-base flex items-center justify-center border-slate-200 font-bold shrink-0',
         gridColumnSpan === 1 && 'aspect-square',
         className,
       )}

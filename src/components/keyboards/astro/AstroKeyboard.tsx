@@ -112,15 +112,7 @@ export default function AstroKeyboard() {
               letter={character}
             />
           ))}
-          <Key backgroundColor={ACCENT_ORANGE} letter="Enter">
-            {
-              <Image
-                className="h-2 sm:h-4 lg:h-5"
-                alt="Astro Logo"
-                src={AstroLogo}
-              />
-            }
-          </Key>
+          <Key backgroundColor={ACCENT_ORANGE} letter="Enter"></Key>
         </KeyboardRow>
         <KeyboardRow>
           <Key backgroundColor={WHITE} letter={'LeftShift'} />
@@ -146,7 +138,13 @@ export default function AstroKeyboard() {
           {(['Control', 'Meta', 'Alt'] as const).map((character) => (
             <Key backgroundColor={WHITE} key={character} letter={character} />
           ))}
-          <Key backgroundColor={ACCENT_ORANGE} letter={' '} />
+          <Key backgroundColor={ACCENT_ORANGE} letter={' '}>
+            <Image
+              className="h-2 sm:h-4 lg:h-5"
+              alt="Astro Logo"
+              src={AstroLogo}
+            />
+          </Key>
           {(['Alt', 'Meta', 'Fn', 'Control'] as const).map((character) => (
             <Key backgroundColor={WHITE} key={character} letter={character} />
           ))}

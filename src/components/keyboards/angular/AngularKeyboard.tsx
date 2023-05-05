@@ -1,24 +1,25 @@
-import Key from '../Key';
-import KeyboardRow from '../KeyboardRow';
+import Image from 'next/image';
+import Key from '../../Key';
+import KeyboardRow from '../../KeyboardRow';
+import AngularLogo from './angular-logo.svg';
 
 const WHITE = '#fff';
-const BACKGROUND = '#e4e4e4';
-const GRAY = '#242424';
-const LIGHT_GREEN = '#42b883';
-const DARK_GREEN = '#35495e';
+const ANGULAR_RED = '#dd0031'; // Red
+const ANGULAR_BLUE = 'rgb(25, 118, 210)'; // Blue
+const BASE = 'rgb(242, 242, 242)';
 
-export default function ReactKeyboard() {
+export default function AngularKeyboard() {
   return (
     <div
       className="flex flex-col gap-3 sm:gap-6 p-2 sm:p-4 rounded-lg w-full shadow-xl"
-      style={{ backgroundColor: BACKGROUND }}>
+      style={{ backgroundColor: BASE }}>
       <KeyboardRow>
-        <Key backgroundColor={LIGHT_GREEN} letter={'Escape'} />
+        <Key backgroundColor={ANGULAR_BLUE} color={WHITE} letter={'Escape'} />
         <span className="col-span-4" />
         {(['F1', 'F2', 'F3', 'F4'] as const).map((character) => (
           <Key
-            backgroundColor={GRAY}
-            color={WHITE}
+            backgroundColor={WHITE}
+            color={ANGULAR_RED}
             key={character}
             letter={character}
           />
@@ -26,7 +27,8 @@ export default function ReactKeyboard() {
         <span className="col-span-2" />
         {(['F5', 'F6', 'F7', 'F8'] as const).map((character) => (
           <Key
-            backgroundColor={LIGHT_GREEN}
+            backgroundColor={ANGULAR_BLUE}
+            color={WHITE}
             key={character}
             letter={character}
           />
@@ -34,8 +36,8 @@ export default function ReactKeyboard() {
         <span className="col-span-2" />
         {(['F9', 'F10', 'F11', 'F12'] as const).map((character) => (
           <Key
-            backgroundColor={GRAY}
-            color={WHITE}
+            backgroundColor={WHITE}
+            color={ANGULAR_RED}
             key={character}
             letter={character}
           />
@@ -43,7 +45,8 @@ export default function ReactKeyboard() {
         <span className="col-span-1" />
         {(['PrintScreen', 'ScrollLock', 'Pause'] as const).map((character) => (
           <Key
-            backgroundColor={LIGHT_GREEN}
+            backgroundColor={ANGULAR_RED}
+            color={WHITE}
             key={character}
             letter={character}
           />
@@ -68,13 +71,22 @@ export default function ReactKeyboard() {
               '=',
             ] as const
           ).map((character) => (
-            <Key backgroundColor={WHITE} key={character} letter={character} />
+            <Key
+              backgroundColor={WHITE}
+              color={ANGULAR_RED}
+              key={character}
+              letter={character}
+            />
           ))}
-          <Key backgroundColor={GRAY} color={WHITE} letter={'Backspace'} />
+          <Key
+            backgroundColor={ANGULAR_BLUE}
+            color={WHITE}
+            letter={'Backspace'}
+          />
           <span className="col-span-1" />
           {(['Insert', 'Home', 'PageUp'] as const).map((character) => (
             <Key
-              backgroundColor={GRAY}
+              backgroundColor={ANGULAR_RED}
               color={WHITE}
               key={character}
               letter={character}
@@ -82,7 +94,7 @@ export default function ReactKeyboard() {
           ))}
         </KeyboardRow>
         <KeyboardRow>
-          <Key backgroundColor={LIGHT_GREEN} letter={'Tab'} />
+          <Key backgroundColor={ANGULAR_RED} color={WHITE} letter={'Tab'} />
           {(
             [
               'Q',
@@ -97,15 +109,20 @@ export default function ReactKeyboard() {
               'P',
               '[',
               ']',
+              '\\',
             ] as const
           ).map((character) => (
-            <Key backgroundColor={WHITE} key={character} letter={character} />
+            <Key
+              backgroundColor={WHITE}
+              color={ANGULAR_RED}
+              key={character}
+              letter={character}
+            />
           ))}
-          <Key backgroundColor={LIGHT_GREEN} letter={'\\'} />
           <span className="col-span-1" />
           {(['Delete', 'End', 'PageDown'] as const).map((character) => (
             <Key
-              backgroundColor={GRAY}
+              backgroundColor={ANGULAR_RED}
               color={WHITE}
               key={character}
               letter={character}
@@ -113,38 +130,66 @@ export default function ReactKeyboard() {
           ))}
         </KeyboardRow>
         <KeyboardRow>
-          <Key backgroundColor={GRAY} color={WHITE} letter={'CapsLock'} />
+          <Key
+            backgroundColor={ANGULAR_RED}
+            color={WHITE}
+            letter={'CapsLock'}
+          />
           {(
             ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'"] as const
           ).map((character) => (
-            <Key backgroundColor={WHITE} key={character} letter={character} />
+            <Key
+              backgroundColor={WHITE}
+              color={ANGULAR_RED}
+              key={character}
+              letter={character}
+            />
           ))}
-          <Key backgroundColor={DARK_GREEN} color={WHITE} letter="Enter" />
+          <Key backgroundColor={ANGULAR_BLUE} color={WHITE} letter="Enter" />
         </KeyboardRow>
         <KeyboardRow>
-          <Key backgroundColor={GRAY} color={WHITE} letter={'LeftShift'} />
+          <Key
+            backgroundColor={ANGULAR_RED}
+            color={WHITE}
+            letter={'LeftShift'}
+          />
           {(['Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/'] as const).map(
             (character) => (
-              <Key backgroundColor={WHITE} key={character} letter={character} />
+              <Key
+                backgroundColor={WHITE}
+                color={ANGULAR_RED}
+                key={character}
+                letter={character}
+              />
             ),
           )}
-          <Key backgroundColor={GRAY} color={WHITE} letter="RightShift" />
+          <Key
+            backgroundColor={ANGULAR_BLUE}
+            color={WHITE}
+            letter="RightShift"
+          />
           <span className="col-span-5" />
-          <Key backgroundColor={LIGHT_GREEN} letter="ArrowUp" />
+          <Key backgroundColor={WHITE} color={ANGULAR_RED} letter="ArrowUp" />
         </KeyboardRow>
         <KeyboardRow>
           {(['Control', 'Meta', 'Alt'] as const).map((character) => (
             <Key
-              backgroundColor={GRAY}
+              backgroundColor={ANGULAR_RED}
               color={WHITE}
               key={character}
               letter={character}
             />
           ))}
-          <Key backgroundColor={DARK_GREEN} letter={' '} />
+          <Key backgroundColor={WHITE} color={ANGULAR_RED} letter={' '}>
+            <Image
+              className="h-3 sm:h-5 md:h-6 lg:h-8"
+              alt="Angular Logo"
+              src={AngularLogo}
+            />
+          </Key>
           {(['Alt', 'Meta', 'Fn', 'Control'] as const).map((character) => (
             <Key
-              backgroundColor={GRAY}
+              backgroundColor={ANGULAR_BLUE}
               color={WHITE}
               key={character}
               letter={character}
@@ -154,7 +199,8 @@ export default function ReactKeyboard() {
           {(['ArrowLeft', 'ArrowDown', 'ArrowRight'] as const).map(
             (character) => (
               <Key
-                backgroundColor={LIGHT_GREEN}
+                backgroundColor={WHITE}
+                color={ANGULAR_RED}
                 key={character}
                 letter={character}
               />
