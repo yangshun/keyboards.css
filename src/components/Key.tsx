@@ -94,8 +94,10 @@ type KeyboardKey =
   | '.'
   | '/'
   | 'RightShift'
+  | 'RightShift2u'
   | 'Control'
   | 'Meta'
+  | 'Meta1u'
   | 'Alt'
   | ' '
   | 'Fn'
@@ -110,6 +112,7 @@ function keyAspectRatio(letter: KeyboardKey): number {
     case '\\':
     case 'Meta':
     case 'Control':
+    case 'RightShift2u':
       return 1.5;
     case 'Backspace':
     case 'Enter':
@@ -296,6 +299,16 @@ function keyLabel(letter: KeyboardKey):
           </span>
         ),
       };
+    case 'RightShift2u':
+      return {
+        type: 'single',
+        center: (
+          <span className="flex items-center w-full ">
+            <ArrowBigUpIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+            <span className="text-[4px] sm:text-[5px] md:text-xs">Shift</span>
+          </span>
+        ),
+      };
     case 'ArrowUp':
       return {
         type: 'single',
@@ -336,6 +349,13 @@ function keyLabel(letter: KeyboardKey):
         type: 'single',
         center: (
           <DeleteIcon className="h-2 w-2 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6" />
+        ),
+      };
+    case 'Meta1u':
+      return {
+        type: 'single',
+        center: (
+          <span className="text-[4px] sm:text-[5px] md:text-xs">Meta</span>
         ),
       };
     default:
