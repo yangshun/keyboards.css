@@ -37,14 +37,6 @@ const keyboards: ReadonlyArray<{
     keyboard: <ReactKeyboard />,
   },
   {
-    id: 'react-65',
-    backgroundClass: 'bg-[#149dca]',
-    logoMark: (
-      <Image className="w-10 md:w-16" alt="React Logo" src={ReactMark} />
-    ),
-    keyboard: <ReactSixtyFiveKeyboard />,
-  },
-  {
     id: 'vue',
     backgroundClass: 'bg-[#42b883]',
     logoMark: <Image className="w-10 md:w-16" alt="Vue Logo" src={VueMark} />,
