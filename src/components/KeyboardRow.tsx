@@ -16,3 +16,15 @@ export default function KeyboardRow({ children }: Props) {
     </div>
   );
 }
+
+export function KeyboardRowSixtyFive({ children }: Props) {
+  return (
+    <div
+      className="grid gap-1"
+      style={{
+        gridTemplateColumns: `repeat(65, minmax(0, 1fr))`,
+      }}>
+      {children}
+    </div>
+  );
+}

@@ -20,6 +20,7 @@ import ReactMark from '~/components/logos/react.svg';
 import SvelteMark from '~/components/logos/svelte.svg';
 import VueMark from '~/components/logos/vue.svg';
 import { ArrowDownIcon, ArrowUpIcon } from 'lucide-react';
+import ReactSixtyFiveKeyboard from '~/components/keyboards/react/ReactSixtyFiveKeyboard';
 
 const keyboards: ReadonlyArray<{
   id: string;
