@@ -1,28 +1,16 @@
 import { ReactNode } from 'react';
 
 type Props = Readonly<{
-  span?: number;
   children?: ReactNode;
+  span?: number;
 }>;
 
-export default function KeyboardRow({ children }: Props) {
+export default function KeyboardRow({ children, span = 73 }: Props) {
   return (
     <div
       className="grid gap-1"
       style={{
-        gridTemplateColumns: `repeat(73, minmax(0, 1fr))`,
-      }}>
-      {children}
-    </div>
-  );
-}
-
-export function KeyboardRowSixtyFive({ children }: Props) {
-  return (
-    <div
-      className="grid gap-1"
-      style={{
-        gridTemplateColumns: `repeat(65, minmax(0, 1fr))`,
+        gridTemplateColumns: `repeat(${span}, minmax(0, 1fr))`,
       }}>
       {children}
     </div>

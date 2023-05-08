@@ -1,20 +1,22 @@
 import Image from 'next/image';
+
 import Key from '../../Key';
-import KeyboardRowSixtyFive from '../../KeyboardRowSixtyFive';
+import KeyboardRow from '../../KeyboardRow';
 import ReactLogo from './react-logo.svg';
 
+const KEYBOARD_SPAN = 64;
 const WHITE = '#fff';
 const PRIMARY_BLUE = 'rgb(20 158 202/1)';
 const GRAY = 'rgb(35 39 47/1)';
 const LIGHT_GRAY = 'rgb(52 58 70/1)';
 
-export default function ReactSixtyFiveKeyboard() {
+export default function ReactKeyboard65() {
   return (
     <div
       className="flex flex-col gap-3 sm:gap-6 p-2 sm:p-4 rounded-lg w-full shadow-xl"
       style={{ backgroundColor: GRAY }}>
       <div className="flex flex-col gap-1">
-        <KeyboardRowSixtyFive>
+        <KeyboardRow span={KEYBOARD_SPAN}>
           <Key backgroundColor={PRIMARY_BLUE} color={WHITE} letter={'Escape'} />
           {(
             [
@@ -48,8 +50,8 @@ export default function ReactSixtyFiveKeyboard() {
               letter={character}
             />
           ))}
-        </KeyboardRowSixtyFive>
-        <KeyboardRowSixtyFive>
+        </KeyboardRow>
+        <KeyboardRow span={KEYBOARD_SPAN}>
           <Key backgroundColor={LIGHT_GRAY} color={WHITE} letter={'Tab'} />
           {(
             [
@@ -78,8 +80,8 @@ export default function ReactSixtyFiveKeyboard() {
               letter={'PageUp'}
             />
           }
-        </KeyboardRowSixtyFive>
-        <KeyboardRowSixtyFive>
+        </KeyboardRow>
+        <KeyboardRow span={KEYBOARD_SPAN}>
           <Key backgroundColor={LIGHT_GRAY} color={WHITE} letter={'CapsLock'} />
           {(
             ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'"] as const
@@ -95,8 +97,8 @@ export default function ReactSixtyFiveKeyboard() {
               letter={'PageDown'}
             />
           }
-        </KeyboardRowSixtyFive>
-        <KeyboardRowSixtyFive>
+        </KeyboardRow>
+        <KeyboardRow span={KEYBOARD_SPAN}>
           <Key
             backgroundColor={LIGHT_GRAY}
             color={WHITE}
@@ -121,8 +123,8 @@ export default function ReactSixtyFiveKeyboard() {
               letter={'End'}
             />
           }
-        </KeyboardRowSixtyFive>
-        <KeyboardRowSixtyFive>
+        </KeyboardRow>
+        <KeyboardRow span={KEYBOARD_SPAN}>
           {(['Control', 'Meta', 'Alt'] as const).map((character) => (
             <Key
               backgroundColor={LIGHT_GRAY}
@@ -157,7 +159,7 @@ export default function ReactSixtyFiveKeyboard() {
               />
             ),
           )}
-        </KeyboardRowSixtyFive>
+        </KeyboardRow>
       </div>
     </div>
   );

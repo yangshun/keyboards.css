@@ -8,7 +8,7 @@ const PRIMARY_BLUE = 'rgb(20 158 202/1)';
 const GRAY = 'rgb(35 39 47/1)';
 const LIGHT_GRAY = 'rgb(52 58 70/1)';
 
-export default function ReactSeventyFiveKeyboard() {
+export default function ReactKeyboard75() {
   return (
     <div
       className="flex flex-col gap-3 sm:gap-6 p-2 sm:p-4 rounded-lg w-full shadow-xl"

@@ -20,7 +20,7 @@ import ReactMark from '~/components/logos/react.svg';
 import SvelteMark from '~/components/logos/svelte.svg';
 import VueMark from '~/components/logos/vue.svg';
 import { ArrowDownIcon, ArrowUpIcon } from 'lucide-react';
-import ReactSixtyFiveKeyboard from '~/components/keyboards/react/ReactSixtyFiveKeyboard';
+import ReactKeyboard65 from '~/components/keyboards/react/ReactKeyboard65';
 
 const keyboards: ReadonlyArray<{
   id: string;
@@ -34,7 +34,11 @@ const keyboards: ReadonlyArray<{
     logoMark: (
       <Image className="w-10 md:w-16" alt="React Logo" src={ReactMark} />
     ),
-    keyboard: <ReactKeyboard />,
+    keyboard: (
+      <div className="-mb-4">
+        <ReactKeyboard />
+      </div>
+    ),
   },
   {
     id: 'vue',
