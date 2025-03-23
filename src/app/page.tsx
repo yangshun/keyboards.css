@@ -11,7 +11,9 @@ import QwikKeyboard from '~/components/keyboards/qwik/QwikKeyboard';
 import ReactKeyboard from '~/components/keyboards/react/ReactKeyboard';
 import SvelteKeyboard from '~/components/keyboards/svelte/SvelteKeyboard';
 import VueKeyboard from '~/components/keyboards/vue/VueKeyboard';
+import PreactKeyboard from '~/components/keyboards/preact/PreactKeyboard';
 
+import PreactMark from '~/components/logos/preact.svg';
 import AstroMark from '~/components/logos/astro.svg';
 import AngularMark from '~/components/logos/angular.svg';
 import DocusaurusMark from '~/components/logos/docusaurus.svg';
@@ -69,6 +71,18 @@ const keyboards: ReadonlyArray<{
       <Image className="h-6 md:h-10" alt="Astro Logo" src={AstroMark} />
     ),
     keyboard: <AstroKeyboard />,
+  },
+  {
+    id: 'preact',
+    backgroundClass: 'bg-[#6B44BD]',
+    logoMark: (
+      <Image className="w-10 md:w-16" alt="Preact Logo" src={PreactMark} />
+    ),
+    keyboard: (
+      <div className="-mb-4">
+        <PreactKeyboard />
+      </div>
+    ),
   },
   {
     id: 'docusaurus',
