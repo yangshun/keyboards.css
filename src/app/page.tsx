@@ -42,19 +42,6 @@ const keyboards: ReadonlyArray<{
       </div>
     ),
   },
-
-  {
-    id: 'preact',
-    backgroundClass: 'bg-[#6B44BD]',
-    logoMark: (
-      <Image className="w-10 md:w-16" alt="Preact Logo" src={PreactMark} />
-    ),
-    keyboard: (
-      <div className="-mb-4">
-        <PreactKeyboard />
-      </div>
-    ),
-  },
   {
     id: 'vue',
     backgroundClass: 'bg-[#42b883]',
@@ -84,6 +71,18 @@ const keyboards: ReadonlyArray<{
       <Image className="h-6 md:h-10" alt="Astro Logo" src={AstroMark} />
     ),
     keyboard: <AstroKeyboard />,
+  },
+  {
+    id: 'preact',
+    backgroundClass: 'bg-[#6B44BD]',
+    logoMark: (
+      <Image className="w-10 md:w-16" alt="Preact Logo" src={PreactMark} />
+    ),
+    keyboard: (
+      <div className="-mb-4">
+        <PreactKeyboard />
+      </div>
+    ),
   },
   {
     id: 'docusaurus',
